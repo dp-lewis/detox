@@ -10,10 +10,22 @@
                 font-family: sans-serif;
                 background: #3b5998;
                 color: #fff;
+                line-height: 1.33;
             }
 
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            p {
+                margin: 0;
+            }
+
+            /* 
+                Message that appears when installed
+            */
+
             .message {
-                display: flex;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -23,12 +35,30 @@
                 width: 100%;
                 justify-content: center;
                 flex-direction: column;
+                display: none;
             }
 
-            h1 {
-                font-size: 2rem;
-                font-weight: bold;
+            .standalone .message {
+                display: flex;
             }
+
+            /*
+                Intro for when viewed on the web
+            */
+
+            .intro {
+                text-align: center;
+                padding-top: 4em;
+
+                max-width: 20em;
+                margin: auto;
+            }
+
+            .standalone .intro {
+                display: none;
+            }
+
+
 
             .cta {
                 position: fixed;
@@ -62,13 +92,10 @@
                 display: none;
             }
 
-            svg {
+            .cta svg {
                 width: 2em;
             }
 
-            p {
-                margin: 0;
-            }
 
             .disclaimer {
                 font-size: .75em;
@@ -83,7 +110,15 @@
                     transform: none;
                 }
                 .cta:after { 
-                    display: none;
+                    top: auto;
+                    bottom: 100%;
+                    left: 50%;
+                    border-color: rgba(255, 255, 255, 0);
+                    border-bottom-color: #fff;
+                }
+
+                .intro {
+                    padding-top: 10em;
                 }
             }
 
@@ -96,6 +131,10 @@
         </script>
     </head>
     <body>
+        <div class="intro"> 
+            <h1>Social Detox</h1>
+            <p>This page is designed to be installed onto an iOS device and help wheen you off your Facebook addiction.</p>
+        </div>
         <div class="message">
             <h1>Talk to a loved one</h1>
             <p class="disclaimer">This page is not affiliated with Facebook in any way.</p>
